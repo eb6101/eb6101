@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<p>这是一个结构数组的测试</p>
+		
+		<script>
+			function myFunc(){
+				return ['zhangs','lisi','wangw']
+			}
+			let k = myFunc();
+			console.log(k[0],k[1],k[2])
+		</script>
+		
+		<p>这是一个结构对象的测试</p>
+		
+		<script>
+			function myFunc2(){
+				return {username:'zhangs',password:'123456',id:3}
+			}
+			//数据类型{对象属性:变量名,对象属性2:变量名2,...} 
+			let {username:a,password:b,id:c} = myFunc2();
+			console.log(a,b,c)
+		</script>
+		
+		<p>展开操作符测试</p>
+		<script>
+			let Arr = ['aa','bb','cc'];
+			console.log(Arr)
+			console.log(...Arr)     // ...为展开操作符
+			let cod = Arr;
+			for(var i = 0 ; i < cod.length ; i++){
+				console.log(cod[i])
+			}
+		</script>
+		
+		<p>这是一个const衡量测试</p>
+		
+		<script>
+			//const衡量会限制给衡量赋值的动作，但不会限制衡量中的值
+			const test1 = ['张三','李四','王五']
+			console.log(...test1);
+			test1.push('测试')
+			console.log(...test1)
+			//此处会报错
+			test1 = 10;
+			console.log(test1)
+		</script>
+		
+	</body>
+</html>
