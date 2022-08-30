@@ -134,6 +134,31 @@
 			console.log(option10)
 		</script>
 		
+		<script>
+			function func(a,b){
+				//通过下标获取第一个元素
+				console.log(arguments[0]);
+				//通过下标获取第二个元素
+				console.log(arguments[1]);
+				//通过.length获取实参元素长度
+				console.log(arguments.length);
+				//使用.callee查看它的函数对象
+				console.log(arguments.callee);
+				console.log(arguments.callee == func);
+			}
+			func('hello','world')
+		</script>
+		
+		<script>
+			var Str = 'Abc'
+			// var testReg = new RegExp('Abc','i')
+			var testReg = /a/i
+			/*使用 | 表示或者的意思，使用/[A-z]/查找字符串中是否有字母
+			常见组合[a-z]*任意小写字母 [A-Z]*任意大写字母 [A-z]*任意字母 [0-9]*任意数字
+			常见组合[^a-z]*除了任意小写字母  [^A-Z]*除了任意大写字母  [^A-z]*除了任意字母  [^0-9]*除了任意数字
+			var result99 = testReg.test(Str)
+			console.log(result99)
+		</script>
 		
 	</body>
 </html>
