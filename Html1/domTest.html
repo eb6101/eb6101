@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body id='box99'>
+		
+		<button id='btn99'>我是按钮99</button>
+		<button>我是按钮98</button>
+		<button class="btn97">我是按钮97</button>
+		<button class="btn96">我是按钮96</button>
+		<ul class='list99'>
+			<li>测试1</li>
+			<li>测试2</li>
+			<li>测试3</li>
+		</ul>
+		<a href="https://www.baidu.com" id='a99'>我是百度</a>
+		<a id='a98' href="">这是用Js写入的超链接标签</a>
+		
+		<script>
+			//使用id获取节点对象
+			var btn99 = document.getElementById('btn99')
+			console.log(btn99)
+			//使用标签名获取节点对象
+			var btn98 = document.getElementsByTagName('button')
+			console.log(btn98)
+			//使用类名获取节点对象
+			var btn97 = document.getElementsByClassName('btn97')
+			console.log(btn97)
+			//使用Css选择器选择该按钮
+			var btn96 = document.querySelectorAll('.btn96')
+			console.log(btn96)
+			//创建一个无序列表，使用Css选择器获取并输出其中的li
+			var list99 = document.querySelectorAll('.list99 li')
+			console.log(list99)
+		</script>
+		
+		<script>
+			var btn89 = document.getElementById('btn99')
+			//获取按钮的文本节点
+			console.log(btn89.innerText)
+			//获取一个元素中的代码
+			// var box99 = document.getElementById('box99')
+			// console.log(box99.innerHTML)
+			var a99 = document.getElementById('a99')
+			//创建变量取得指定id元素节点 再使用getAttribute方法获取其中指定属性
+			console.log(a99.getAttribute("href"))
+		</script>
+		
+		<div id='div99'></div>
+		
+		<script>
+			var box98 = document.getElementById('div99')
+			//创建一个div在里面创建一个h1标签
+			box98.innerHTML = "<h3>这是用innerHTML创建的一个一级标题</h3>"
+			
+			var a98 = document.getElementById('a98')
+			a98.href="https://www.souhu.com"
+			console.log(a98)
+			
+		</script>
+		
+		
+		<!-- <script>
+			//创建一个ul无序列表，再创建四个li标签并赋予内容
+			var ul99 = document.createElement('ul')
+			var li99 = document.createAttribute('li')
+			var text99 = document.createTextNode('列表项1')
+			
+			li99.appendChild(text99)
+			ul99.appendChild(li99)
+			
+			doucment.getElementById('div98').appendChild(ul)
+			
+		</script> -->
+		
+		<script>
+			//onblur 当窗口失去焦点时
+			window.onblur = function(){
+				console.log('我点击了窗口以外，窗口失去焦点')
+			}
+			//onfocus 当窗口获得焦点时
+			window.onfocus = function(){
+				console.log('我点击了窗口，窗口获得焦点')
+			}
+			//当窗口加载完毕后，打印输出“你好，欢迎你”
+			window.onload = function(){
+				console.log('你好，欢迎你')
+			}
+			//当窗口大小被改变时，输出“窗口大小在改变”
+			window.onresize = function(){
+				console.log("窗口大小正在改变！")
+			}
+		</script>
+		
+	</body>
+</html>

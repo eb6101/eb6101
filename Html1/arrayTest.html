@@ -70,7 +70,7 @@
 			//push()方法
 			var test2 = ['测试1','测试2','测试3']
 			console.log(test2.length)
-			var option2 = test2.push('测试4',123,'测试5')   //向数组开头添加一个或多个元素并将新数组的长度作为返回值返回
+			var option2 = test2.push('测试4',123,'测试5')   //向数组末尾添加一个或多个元素并将新数组的长度作为返回值返回
 			console.log(option2)
 		</script>
 		
@@ -96,7 +96,7 @@
 		</script>
 		
 		<script>
-			//slice()方法
+			//slice()方法  截取指定长度的元素并重新封装作为返回值返回
 			var test6 = ['测试1','测试2','测试3','测试4','测试5']
 			// var option6 = test6.slice(1,3)
 			console.log(option6)
@@ -153,11 +153,69 @@
 			var Str = 'Abc'
 			// var testReg = new RegExp('Abc','i')
 			var testReg = /a/i
-			/*使用 | 表示或者的意思，使用/[A-z]/查找字符串中是否有字母
-			常见组合[a-z]*任意小写字母 [A-Z]*任意大写字母 [A-z]*任意字母 [0-9]*任意数字
-			常见组合[^a-z]*除了任意小写字母  [^A-Z]*除了任意大写字母  [^A-z]*除了任意字母  [^0-9]*除了任意数字
+			// 使用 | 表示或者的意思，使用/[A-z]/查找字符串中是否有字母
+			// 常见组合[a-z]*任意小写字母 [A-Z]*任意大写字母 [A-z]*任意字母 [0-9]*任意数字
+			// 常见组合[^a-z]*除了任意小写字母  [^A-Z]*除了任意大写字母  [^A-z]*除了任意字母  [^0-9]*除了任意数字
 			var result99 = testReg.test(Str)
 			console.log(result99)
+		</script>
+		
+		<script>
+			//search()方法可以查找字符串中是否含有指定内容，如果有，返回第一次出现的索引，若没有返回-1
+			//它可以接收一个正则表达式作为参数，会根据表达式进行检索字符串
+			//它只会寻找第一个，全局搜索无效
+			var Str1 = "hello abc hello aec afc"
+			var result98 = Str1.search(/a[bef]c/)
+			console.log(result98 + 'Search测试')
+		</script>
+		
+		<script>
+			//replace()方法 替换字符串中内容
+			var Str97 = "1a2a3a4a5a6a7a8a"
+			var result97 = Str97.replace(/[a-z]/i,'@_@')
+			var result97 = Str97.replace(/[a-z]/gi,'@_@')
+			console.log(result97)
+		</script>
+		
+		<script>
+			
+			//正则量词 {n}正好出现n次 {m,}出现m次及以上 {m,n}出现m-n次  +至少一个，相当于{1,}  *0个或多个 相当于{0,} ?0个或1个，相当于{0,1}
+			var Str93 = "aabbcddd"
+			var reg93 = /(ab){1,3}/   //验证是否正好出现1-3次
+			console.log(reg93.test(Str93)+'正则量词测试')
+			
+			//检查手机号
+			var tel99 = "13923657898"
+			var result998 = /^1[3-9][0-9]{9}$/
+			console.log(result998.test(tel99)+'检查手机号')
+			
+			//检查邮箱号
+			var email99 = "abc.def@163.com"
+			var reg999 = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/
+			console.log(reg999.test(email99)+'检查邮箱')
+			
+		</script>
+		
+		<script>
+			
+			var Str96 = "abcabca"
+			//检查一个字符串是否以a结尾
+			var reg = /a$/
+			//检查一个字符串是否以a开头
+			var reg99 = /^a/
+			console.log(reg.test(Str96))
+			console.log(reg99.test(Str96))
+		</script>
+		
+		<script>
+			var Str95 = "  hello world "
+			//  ^\s* 是否以空格开头 \s*$是否以空格结尾   \S除了空格
+			// \w任意字母数字下划线，相当于[A-z 0-9 _] \W 除了~~  \d任意数字 \D除了数字
+			var result95 = /^\s* | \s*$/g   //创建一个变量获得正则表达式
+			console.log(result95.test(Str95))
+			console.log(Str95)
+			Str95 = Str95.replace(result95,"")   //是用replace方法替换正则表达式检索到的内容
+			console.log(Str95)
 		</script>
 		
 	</body>
