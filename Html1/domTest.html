@@ -94,5 +94,159 @@
 			}
 		</script>
 		
+		<div id="box88" style="width: 100px;height: 100px;background-color: #eb6101;position: absolute;"></div>
+		
+		<script>
+			var box88 = document.getElementById("box88");
+			//为document绑定一个按钮按下的事件
+			document.onkeydown = function(event){
+				event = event || window.event;   //解决兼容问题
+				
+				var speed = 15;               //定义移动速度
+				
+				//选择移动方向
+				switch(event.keyCode){
+					case 37:
+					box88.style.left = box88.offsetLeft - speed + "px";
+					break;
+					case 39:
+					box88.style.letf = box88.offsetLeft + speed + "px";
+					break;
+					case 38:
+					box88.style.top = box88.offsetTop - speed + "px";
+					break;
+					case 40:
+					box88.style.top = box88.offsetTop + speed + "px";
+					break;
+				}
+			}
+		</script>
+		
+		<br><div id="box990" style="width: 200px;height: 100px;background: black;"></div>
+		
+		<script>
+			var box990 = document.getElementById("box990")    //获取元素节点
+			
+			box990.onmouseenter = function(){
+				this.style.background = "yellow";          //当鼠标移入时样式修改
+			}
+			
+			box990.onmouseleave = function(){
+				this.style.background = "black";	       //当鼠标移出时样式修改
+			}
+		</script>
+		
+		<div style="width:500px;height: 200px;background-color: none;margin-top: 30px;">
+			<div id="box991" style="position:absolute;width: 100px;height: 100px;background-color: goldenrod;"></div>
+<!-- 			<div id="box991" style="position:absolute;width: 100px;height: 100px;background-color: royalblue;"></div>
+ -->		</div>
+		<script>
+			var box991 = document.getElementById("box991");
+			
+			drag(box991);
+			drag(box88);
+			
+			function drag(obj){
+				obj.onmousedown = function(event){
+					event = window.event || event;
+					
+					obj.setCapture && obj.setCapture();
+					
+					var ol = event.clientX - obj.offsetLeft;
+					var ot = event.clientY - obj.offsetTop;
+					
+					document.onmousemove = function(event){
+						event = event || window.event;
+						
+						var left = event.clientX - ol;
+						var top = event.clientY - ot;
+						
+						obj.style.left = left + "px";
+						obj.style.top = top + "px";
+					};
+					document.onmouseup = function(){
+						document.onmousemove = null;
+						document.onmouseup = null;
+						obj.releaseCapture && obj.releaseCapture();
+					}
+				}
+				return false;
+			}
+		</script>
+		
+		
+<!-- 		<span style="white-space: per;"></span><div class="test990" style="padding:0px 0px; width: 200px;height:100px;border: 1px solid red;">
+		</div>              //获取鼠标坐标值
+		<span style="white-space: per;"></span>
+		<script>
+			document.onmousemove = function(event)
+			{
+				event = event || window.event;
+				var div = document.getElementById("test990");
+				div.innerHTML = "ClientX = " + event.clientX + "ClientY = " + event.clientY
+				+ "<br>ScreenX = " + event.screenX + "ScreenY = " + event.screenY; 
+			}
+		</script> -->
+		
+			<ul id="ul999">
+				<li><a href="javascript:;" class="link999">测试999</a></li>
+				<li><a href="javascript:;" class="link999">测试998</a></li>
+				<li><a href="javascript:;" class="link999">测试997</a></li>
+			</ul>
+		
+		<script>
+			var ul999 = document.getElementById("ul999")
+			
+			ul999.onclick = function(event){
+				event = event || window.event;
+				if(event.target.className == "link999"){
+					console.log("我是事件委派的响应函数")
+				}
+			};
+		</script>
+		
+		<button id="btn990">延时按钮</button>
+		
+		<script>
+			var btn990 = document.getElementById("btn990");
+			btn990.onclick = function(){
+				var timer = setTimeout(function(){
+					console.log("hello(延时版)")
+				},2000);
+			}
+		</script>
+		
+		<div id="bg990" style="width: 150px;height: 100px;background-color: blueviolet;margin-top: 20px;"></div>
+		
+		<script>
+			var bg990 = document.getElementById("bg990");
+			//创建一个方框当点击时延时改变背景颜色再自动还原
+			bg990.onclick = function(event){
+				event = event || window.event;
+					window.setTimeout(function(){
+						bg990.style.background = "red";
+						console.log("我点击了紫色方框")
+						window.setTimeout(function(){{
+							bg990.style.background = "blueviolet"
+							console.log("恢复为紫色方框")
+						}},1000)
+					},1000)
+			}
+		</script>
+		
+		<div id="div991" style="width: 100px;height: 200px;margin-top: 30px;background-color: aquamarine;"></div>
+		
+		<script>
+			var div991 = document.getElementById("div991");
+			
+			div991.onclick = function(){
+				var timer2 = setInterval(function(){
+					console.log("hellow(定时版)")
+				},2000)
+				// 清除定时器
+				// clearInterval(timer2);
+			}
+		</script>
+		
 	</body>
 </html>
