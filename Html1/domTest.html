@@ -390,6 +390,30 @@
 		}
 	</script>
 
+	
+<script>
+
+	//十进制转二进制 判断每一位是否为1
+
+	console.log(parseInt(10).toString(2))
+
+	console.log((10 >> 3) & 1)
+
+	let arr990 = [];
+
+	for(let i = 0 ; i <= 3 ; i++){
+		// console.log((10 >> i) & 1)
+		if((10 >> i) & 1){
+			arr990.push("false");
+		}
+		else{
+			arr990.push("true");
+		}
+	}
+
+	console.log(arr990)
+</script>
+
 
 </body>
 
