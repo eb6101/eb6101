@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #main{
+            width:800px;
+            height:1500px;
+            background: #999;
+            margin:auto;
+            box-sizing: border-box;
+            padding-top:1%;
+            /* top:0;
+            left:0;
+            right:0;
+            bottom: 0; */
+
+            .randomColorBlock--1 {
+                width:300px;
+                height:150px;
+            }
+
+            .nav {
+                width:800px;
+                height:100px;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            #block-1 {
+                width:500px;
+                height:300px;
+                background: #123;
+            }
+
+            #section1 , #section2 , #section3 {
+                width:300px;
+                height:150px;
+                background: #789;
+                margin-bottom:25px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="main">
+
+        <div class="nav">
+
+            <a class="bar" href="section1">Section--1</a>
+            <a class="bar" href="section2">Section--2</a>
+            <a class="bar" href="section3">Section--3</a>
+
+        </div>
+
+        <section id="section1">
+            
+        </section>
+
+        <section id="section2">
+            
+        </section>
+
+        <section id="section3">
+            
+        </section>
+
+        <button class="randomColorBtn--1">Click!</button>
+        <div class="randomColorBlock--1"></div>
+
+    </div>
+
+    <script>
+
+        const main = document.querySelector('#main');
+
+        document.querySelectorAll('.bar').forEach(function(el){ //查询到所有class为bar的元素 遍历 el为元素
+            el.addEventListener('click',function(e){  //给每个导航栏(el)添加监听事件,当点击时，禁用他们链接跳转的功能
+                e.preventDefault(); //禁用链接跳转的功能
+                const id = el.getAttribute('href');  //获取每个要跳转到的元素id
+                console.log(id);
+                document.getElementById(id).scrollIntoView({behavior:"smooth"}); //使用querySelector(id)不好用?
+
+            })
+        })
+
+        //Math.floor 获取给定的一个值的最大整数 如  Math.floor(25.3) = 25 
+        const randomInt = (min, max) =>  Math.floor(Math.random() * (max - min + 1) + min);
+
+        // 获取随机颜色
+        const randomColor = () => `rgb(${randomInt(0,255)},${randomInt(0,255)},${randomInt(0,255)})`;
+        
+        const alt = function(e) {
+
+            console.log("触发了事件");
+            console.log(e)
+
+            // console.log(randomColor(0,255));
+
+        }
+
+        main.addEventListener('mouseenter',alt);
+
+        // const rmalt = function(){
+        //     main.removeEventListener('mouseenter',alt);
+        // }
+
+        // main.addEventListener('mouseleave',rmalt);
+
+        const randomBlock = document.querySelector('.randomColorBlock--1')
+
+        document.querySelector('.randomColorBtn--1').
+        addEventListener('click',function(e){
+            // this.style.backgroundColor = randomColor(); // 这里的this指向document.querySelector('.randomColorBtn--1')
+            randomBlock.style.backgroundColor = randomColor();
+        })
+
+        const randomTimer = () =>{
+            randomBlock.style.backgroundColor = randomColor();
+        }
+
+        // setInterval(randomTimer,1000);
+
+
+    </script>
+    
+</body>
+</html>

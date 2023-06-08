@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .testBlock--1{
+            height:3000px;
+            width:1500px;
+            background: transparent;
+            position:relative;
+
+            .testBtn--1 {
+                position:absolute;
+                top:300px;
+                left:0;
+            }
+        
+            .testBtn--2 {
+                position:absolute;
+                top:1000px;
+                left:0;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="testBlock--1">
+
+        <button class="testBtn--1"> Click! </button>
+
+        <button class="testBtn--2"> Hi! </button>
+
+    </div>
+
+    <script>
+
+        //document.quertSelector与document.getElementById的区别
+        //前者只会获取查询到的第一个元素 如果想全部获取 需要使用document.quertSelectorAll();
+        //后者是将查询到的所有元素整合
+        //（本人理解，可能不对^^）
+
+        const Btn1 = document.querySelector('.testBtn--1');
+        const Btn2 = document.querySelector('.testBtn--2');
+
+        Btn1.addEventListener('click',function(){
+
+            //获取元素距x0,y0的一些距离参数getBoundingClientRect();
+            console.log(Btn1.getBoundingClientRect());
+            console.log(Btn2.getBoundingClientRect());
+
+            // console.log(Btn2.getBoundingClientRect().top);
+            // console.log(window.pageYOffset);
+
+            //Btn2.getBoundingClientRect().top为Btn2距窗口可视的最顶端；
+            //window.pageYOffset为当前可视窗口的最顶端距当前document的最顶端
+
+            //使窗口滚动到X/Y位置
+            // window.scrollTo(0 , Btn2.getBoundingClientRect().top + window.pageYOffset);
+            //使窗口滚动更平滑
+            window.scroll({
+                left: 0,
+                top: Btn2.getBoundingClientRect().top + window.pageYOffset,
+                behavior: "smooth"
+            })
+            //现代方法 需要找到需要滚动到的元素 使用scroolIntoView()方法 无需获取一些复杂的位置信息
+            Btn2.scrollIntoView({behavior:"smooth"});
+
+            // if(Btn2.scrollIntoView){
+            //     console.log("滚动到第二个按钮了!")
+            // }
+
+        })
+
+    </script>
+
+</body>
+</html>
