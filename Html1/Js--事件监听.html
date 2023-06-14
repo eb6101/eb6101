@@ -82,14 +82,28 @@
 
         const main = document.querySelector('#main');
 
-        document.querySelectorAll('.bar').forEach(function(el){ //查询到所有class为bar的元素 遍历 el为元素
-            el.addEventListener('click',function(e){  //给每个导航栏(el)添加监听事件,当点击时，禁用他们链接跳转的功能
-                e.preventDefault(); //禁用链接跳转的功能
-                const id = el.getAttribute('href');  //获取每个要跳转到的元素id
-                console.log(id);
-                document.getElementById(id).scrollIntoView({behavior:"smooth"}); //使用querySelector(id)不好用?
+        // document.querySelectorAll('.bar').forEach(function(el){ //查询到所有class为bar的元素 遍历 el为元素
+        //     el.addEventListener('click',function(e){  //给每个导航栏(el)添加监听事件,当点击时，禁用他们链接跳转的功能
+        //         e.preventDefault(); //禁用链接跳转的功能
+        //         const id = el.getAttribute('href');  //获取每个要跳转到的元素id
+        //         console.log(id);
+        //         document.getElementById(id).scrollIntoView({behavior:"smooth"}); //使用querySelector(id)不好用?
 
-            })
+        //     })
+        // })
+
+        //事件委托
+        document.querySelector('.nav')
+        .addEventListener('click',function(e){
+            e.preventDefault();
+            // console.log(e);
+            // console.log(e.target);
+
+            if(e.target.classList.contains('bar')){
+                const id = e.target.getAttribute('href');
+                // console.log(id);
+                document.getElementById(id).scrollIntoView({behavior:"smooth"});
+            }
         })
 
         //Math.floor 获取给定的一个值的最大整数 如  Math.floor(25.3) = 25 
