@@ -44,6 +44,26 @@
                 background: #789;
                 margin-bottom:25px;
             }
+
+            #BtnClick {
+                width:800px;
+                height:30px;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .testBtn{
+                width:150px;
+                border-radius: 10px;
+                background: #135790;
+                color:#fff;
+                transition: .3s;
+            }
+
+            .testBtn--active{
+                transition: .3s;
+                transform : translateY(-50%);
+            }
         }
 
     </style>
@@ -75,6 +95,25 @@
 
         <button class="randomColorBtn--1">Click!</button>
         <div class="randomColorBlock--1"></div>
+
+        <div id="BtnClick">
+
+            <button class="testBtn">
+                <span>Btn1</span>
+                Click!
+            </button>
+
+            <button class="testBtn">
+                <span>Btn2</span>
+                Click!
+            </button>
+
+            <button class="testBtn">
+                <span>Btn3</span>
+                Click!
+            </button>
+
+        </div>
 
     </div>
 
@@ -114,8 +153,8 @@
         
         const alt = function(e) {
 
-            console.log("触发了事件");
-            console.log(e)
+            // console.log("触发了事件");
+            // console.log(e)
 
             // console.log(randomColor(0,255));
 
@@ -143,6 +182,30 @@
 
         // setInterval(randomTimer,1000);
 
+
+    </script>
+
+    <script>
+
+        const testBtn = document.querySelectorAll('.testBtn');
+        
+        const BtnClick = document.querySelector('#BtnClick');
+
+        BtnClick.addEventListener('click',function(e){
+            // const clicked = e.target.parentElement;
+            //此处使用e.target.parentElement总是会向上层寻找父元素,而.testBtn外层如果还有父元素 则输出的不是我们想要的元素
+            //此处使用.closest('')来查找最近的祖先元素
+            const clicked = e.target.closest('.testBtn');
+            //但此处如果点击按钮之间空白区域 还是会寻找最近的祖先元素 就会发生null 导致报错
+            console.log(clicked);
+
+            if(!clicked) return; //如果点击为null 则不执行后续语句 直接返回 点击按钮外空白区域clicked == null等于true
+
+            //在给点击按钮加入变化前 删除所有按钮的向上动作 使clicked按钮加入active类
+            testBtn.forEach(t => t.classList.remove('testBtn--active'));
+            //在按钮点击时 添加active类 使按钮发生变化
+            clicked.classList.add('testBtn--active');
+        })
 
     </script>
     
