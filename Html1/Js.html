@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let obj = {};
+        console.log(obj && true); //对象在布尔表达式中为true
+
+        const str1 = "hello world";
+        console.log(str1.indexOf("o")); //从字符串开始
+        console.log(str1.lastIndexOf("o")); //从字符串末尾（但索引值还是从前往后)
+
+        let str2 = "red&blue&yellow"
+        console.log(str2.startsWith("red")); //检查从索引0开始，可传入第二个参数 为指定开始索引的位置
+        console.log(str2.endsWith("yellow")); //检查从索引（string.length - substring.length）的匹配项 字符串长度 - 匹配项长度
+        console.log(str2.includes("blue")); //全字符串，可传入第二个参数 为指定开始索引的位置
+
+        let str3 = " new world "
+        let str31 = str3.trim();
+        console.log(str31.trim()); //删除字符串中空格(由于此方法是创建字符串的副本，因此原字符串不会收到影响) trimLeft()/trimRight 从字符串左/右开始清除空格
+
+        //str3.repeat()复制字符串内容x次 | str3.padStart() / str3.padEnd 从字符串开始和结束填充字符串 (x,'a') 位数,字符
+
+        for(const a of "abcde"){ //使用迭代方法按序访问每个字符
+            console.log(a);
+        }
+        let msg = "abcde";
+        console.log([...msg]); //字符串可以通过这个解构操作符来解构 ...结构操作符 它可以将字符串解构为一个字符数组
+
+
+        //eval接收一个参数，即一个要执行的Js字符串
+        let msg2 = "hello world";
+        eval('console.log(msg2)');
+
+        eval("function sayHi(){console.log('Hi!')}");
+        sayHi();
+        
+
+    </script>
+
+    <script>
+
+        // Math.random()方法返回一个0~1范围内的随机数，其中包含0但不包含1 
+        //Math.random()方法始终返回一个小数，所以如果想获取1~10范围内随机一个数
+        let rdmNum1 = Math.floor(Math.random() * 10 + 1); //获取1~10范围内随机整数 其中最小的为1
+        let rdmNum2 = Math.floor(Math.random() * 9 + 2) //获取2~10范围内随机整数 
+
+        console.log(rdmNum1,rdmNum2);
+
+    </script>
+
+    <script>
+
+        //Object
+        //创建对象 两种方式
+
+        //1.
+        let person1 = new Object(); // === let person1 = {};
+        person1.name = "Sam";
+        person1.age = 25;
+        console.log(person1);
+
+        //2. (对象字面量) ✅
+        let person2 = {
+            name : "Lisa",
+            "age": 22,
+            
+        }
+        console.log(person2);
+
+        //存取对象数据 两种方式
+        //1. 点语法(面向对象编程的惯例) ✅
+        let person3 = {
+            color: "red"
+        }
+        console.log(person3.color);
+
+        //2. 中括号 要在中括号内使用属性的字符串形式 可以传入一个变量 也可以接收导致语法错误或关键字的字符
+        console.log(person3["color"]);
+
+        //Array
+        //ES中的Array与其他语言的数组有很大区别，虽然也是一组有序的数据
+        //但其中每个槽位可以存储任意类型的数据，而且ES的数组也是动态大小的，会随着数据添加而自动增长。
+
+        //创建数组方式与创建对象方式类似 1.构造函数 Array() 2.数组字面量 let arr = [1,3,4];
+
+        const arr1 = Array.from([1,2,3,4]); //使用ES6的Array.from()方法创建的包含3个空位的数组
+        for (const val of arr1){
+            console.log(val);
+            console.log(val == undefined);
+        }
+
+        console.log(Array.of(...[,,,]));
+        console.log(Array.of(...arr1));
+
+        //数组迭代器方法 3个 keys(),values()和entries() 1返回数组索引的迭代器 2返回数组元素的迭代器 3返回索引/值的迭代器
+        const arr2 = ["bar" , "lop" , " pop" , "laq"];
+
+        const aKeys = Array.from(arr2.keys());
+        const aValues = Array.from(arr2.values());
+        const aEntries = Array.from(arr2.entries());
+
+        console.log(aKeys);
+        console.log(aValues);
+        console.log(aEntries);
+
+        //使用ES6拆分键值对
+        const arr3 = ["bar" , "lop" , " pop" , "laq"];
+
+        for(const [index,ele] of arr3.entries()){
+            console.log(index);
+            console.log(ele);
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>
