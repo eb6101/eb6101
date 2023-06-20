@@ -50,8 +50,9 @@
         //Math.random()方法始终返回一个小数，所以如果想获取1~10范围内随机一个数
         let rdmNum1 = Math.floor(Math.random() * 10 + 1); //获取1~10范围内随机整数 其中最小的为1
         let rdmNum2 = Math.floor(Math.random() * 9 + 2) //获取2~10范围内随机整数 
+        let rdmNum3 = Math.floor(Math.random() * 100 + 1)
 
-        console.log(rdmNum1,rdmNum2);
+        console.log(rdmNum1,rdmNum2,rdmNum3);
 
     </script>
 
@@ -87,6 +88,13 @@
         //Array
         //ES中的Array与其他语言的数组有很大区别，虽然也是一组有序的数据
         //但其中每个槽位可以存储任意类型的数据，而且ES的数组也是动态大小的，会随着数据添加而自动增长。
+        //Array构造函数在ES6中还新增了两个用于创建数组的静态方法:from() / of()
+        //from()用于将类数组解构转换为数组实例
+        //from()第一个参数是一个类数组对象，即任何可以迭代的结构。或者有一个length属性和可索引元素的结构
+        //第二个为可选的映射函数参数 第三个参数用于指定映射函数中this的值
+
+        //of()将将一组参数转换为数组实例 例:console.log(Array.of(1,2,3,4) //[1,2,3,4])
+
 
         //创建数组方式与创建对象方式类似 1.构造函数 Array() 2.数组字面量 let arr = [1,3,4];
 
@@ -97,7 +105,7 @@
         }
 
         console.log(Array.of(...[,,,]));
-        console.log(Array.of(...arr1));
+        console.log(Array.of(...arr1)); // ...扩展运算符
 
         //数组迭代器方法 3个 keys(),values()和entries() 1返回数组索引的迭代器 2返回数组元素的迭代器 3返回索引/值的迭代器
         const arr2 = ["bar" , "lop" , " pop" , "laq"];
@@ -105,6 +113,7 @@
         const aKeys = Array.from(arr2.keys());
         const aValues = Array.from(arr2.values());
         const aEntries = Array.from(arr2.entries());
+        //Array.from()
 
         console.log(aKeys);
         console.log(aValues);
@@ -118,7 +127,195 @@
             console.log(ele);
         }
 
+        //数组填充fill() 第一个参数填充的字符 第二个参数开始的索引值 第三个参数结束的索引值
+        const arr4 = [0,0,0,0,0];
+        console.log(arr4.fill(5));
+
+        const arr5 = [1,2,3,4,5];
+        console.log(arr5.fill(3,3));
+
+        const arr6 = [3,5,7,8,9];
+        console.log(arr6.fill(0,1,4)); //1之后包含1 4之前不包含4
+
+        //join()方法接收一个参数，即字符串分隔符  如果参数传入的是null、undefined或空值则默认添加逗号分割
+        const colors2 = ["red","blue","pink"];
+        console.log(colors2.join());
+        console.log(colors2.toString()); //与join()方法得到的值相同
+
+        //栈方法(后进先出 LIFO Last In First Out 最近添加的项先被删除 push()和pop())
+        let colors3 = new Array();
+        let count = colors3.push("red","black");
+        console.log(count);
+
+        let item = colors3.pop();
+        console.log(item,colors3.length);
+
+        //队列方法(先进先出 FIFO First In First Out) push()和shift() 从队列(数组)末尾添加数据 从队列(数组)开头获取数据
+        let colors4 = new Array();
+        let count2 = colors4.push("red","green");
+        console.log(count2);
+
+        let item2 = colors4.shift();
+        console.log(item2);
+
+        //ECMAScript还提供了unshift()在数组开头添加任意多个值，然后返回数组新长度 可以使用unshift()和pop()在数组开头添加数据，在数组末尾获取数据
+
+        //比较函数(从小到大) 
+        function compare(val1 , val2) {
+            if(val1 < val2){
+                return -1; //return 1 ;(从大到小)
+            }
+            else if(val > val2){
+                return 1  //return -1 ;(从大到小)
+            }
+            else{
+                return 0
+            }
+        }
+
+        let arr10 = [20,15,10,5,1];
+        console.log(arr10.reverse());
+        arr10.sort((a,b) => a < b ? 1 : a > b ? -1 : 0);
+        console.log(arr10)
+
+        //concat()在末尾添加
+        //slice()创建一个从开始索引到结束索引之间的新数组 (1,3) 从1开始包含1 到3结束不包含3 如果只有一个参数则返回到数组末尾的所有元素
+
+        //splice()方法用于在数组中插入元素
+        let colors5 = ["red","green","blue"];
+        let removed = colors5.splice(0,1) //删除第一项 删除
+        console.log(colors5);
+        console.log(removed);
+
+        removed = colors5.splice(1,0,"yellow","black"); //从1开始添加 删除0个元素 插入
+        console.log(colors5);
+        console.log(removed); //空数组
+
+        removed = colors5.splice(1,1,"red","pink"); //从1开始 删除1个元素 替换
+        console.log(colors5);
+        console.log(removed); //yellow
+
+        //indexOf() / lastIndexOf() 和 includes() | 从前往后(没找到 -1) / 从后往前(没找到 -1) / 是否包含(true,false)
         
+        let arr11 = [1,2,3,4,5,4,3,2,1];
+        console.log(arr11.indexOf(4));
+        console.log(arr11.lastIndexOf(4));
+        console.log(arr11.includes(4));
+
+        console.log(arr11.indexOf(4,4));
+        console.log(arr11.lastIndexOf(4,4));
+        console.log(arr11.includes(4,7));
+
+        let person4 = {name:'liv'};
+        let people = [{name:'liz'}];
+        let morePeople = [person4];
+
+        console.log(people.indexOf(person4));
+        console.log(morePeople.indexOf(person4)) //第0项元素
+        console.log(people.includes(person4));
+        console.log(morePeople.includes(person4));
+
+        //断言函数 find()和findIndex()使用了断言函数 1返回第一个匹配的元素 2返回第一个匹配元素的索引
+        const people2 = [
+            {
+                name : 'liz',
+                age : 18
+            },
+            {
+                name : 'liv',
+                age : 22
+            }
+        ]
+
+        console.log(people2.find((ele,index,people2) => ele.age > 18)); //三个参数(元素,索引,数组本身)
+        console.log(people2.findIndex((ele,index,people2) => ele.age > 18));
+
+        //every()每一项都符合才会返回true some()某一项符合就会返回true
+
+        //filter()基于给定函数来决定某一项是否应该包含在它返回的数组中
+        let arr12 = [1,2,3,4,5,4,3,2,1];
+        let filterResult = arr12.filter((item,index,arr12) => item > 2);
+        console.log(filterResult); //返回数值大于2的元素
+
+        //map()方法返回的数组是对原数组的每一项同样位置运行传入函数而返回的结果
+        let mapResult = arr12.map((i,index,arr12) => i * 2);
+        console.log(mapResult);
+
+        //forEach()等同于for循环遍历数组
+        let arr13 = new Array();
+        arr12.forEach((i , index , arr12) => {
+            arr13.push(i);
+        });
+        console.log(arr13);
+
+        //map
+        const m = new Map();
+
+        console.log(m.has("link"));
+        console.log(m.get("liz"));
+        console.log(m.size);
+
+        m.set("one","hinata")
+        .set("two","liz");
+
+        console.log(m.delete("two"));
+        console.log(m);
+        console.log(m.size);
+        console.log(m.get("one"));
+        console.log(m.has("liz"));
+
+        //Set
+        //在ES6中新增了一种集合类型 Set在很多方面像加强的Map类型一样，其中很多API和行为都是共有的
+        //Set使用add()方法增加值 其余方法与Map相同
+
+        let arr14 = ["pinal","pop","link"];
+        
+        let [p,o,d] = arr14; //数组解构
+        console.log(p,o,d);
+
+        //reduce()用于对数组中的每个元素执行一个回调函数,并将结果累计为单个值
+        //reduce()方法接受两个参数：回调函数和初始值 而回调函数中接受四个参数(累积值(上一次回调函数的返回值或初始值),当前值,当前索引和数组本身)
+        let arr15 = [1,2,3,4];
+        let sum = arr15.reduce((a,b) => {
+            return a + b;
+        },0);
+        console.log(sum);
+
+    </script>
+
+    <script>
+
+        //面向对象编程
+        //属性分为数据属性与访问器属性两种
+
+        //1.数据属性(4个特性)
+        //   [[Configurable]]     表示水属性是否可以通过delete删除并重新定义
+        //   [[Enumerable]]       表示是否可以通过for-in循环返回
+        //   [[Writable]]         表示属性的值是否可以被修改
+        //   [[Value]]            包含属性实际的值
+
+        let person5 = {};
+        Object.defineProperty(person5,"name",{
+            writable :false,
+            value : "hinata"
+        });
+        console.log(person5.name);
+        person5.name = "pink";
+        console.log(person5.name);
+
+    </script>
+
+    <script>
+
+        function add(){
+            let counter = 0;
+            return function(){
+                return ++counter;
+            }
+        }
+        add();
+
+        // 𝓯𝖊𝖎
 
     </script>
     
