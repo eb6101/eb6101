@@ -10,33 +10,33 @@
     <script>
 
         let obj = {};
-        console.log(obj && true); //对象在布尔表达式中为true
+        //console.log(obj && true); //对象在布尔表达式中为true
 
         const str1 = "hello world";
-        console.log(str1.indexOf("o")); //从字符串开始
-        console.log(str1.lastIndexOf("o")); //从字符串末尾（但索引值还是从前往后)
+        //console.log(str1.indexOf("o")); //从字符串开始
+        //console.log(str1.lastIndexOf("o")); //从字符串末尾（但索引值还是从前往后)
 
         let str2 = "red&blue&yellow"
-        console.log(str2.startsWith("red")); //检查从索引0开始，可传入第二个参数 为指定开始索引的位置
-        console.log(str2.endsWith("yellow")); //检查从索引（string.length - substring.length）的匹配项 字符串长度 - 匹配项长度
-        console.log(str2.includes("blue")); //全字符串，可传入第二个参数 为指定开始索引的位置
+        //console.log(str2.startsWith("red")); //检查从索引0开始，可传入第二个参数 为指定开始索引的位置
+        //console.log(str2.endsWith("yellow")); //检查从索引（string.length - substring.length）的匹配项 字符串长度 - 匹配项长度
+        //console.log(str2.includes("blue")); //全字符串，可传入第二个参数 为指定开始索引的位置
 
         let str3 = " new world "
         let str31 = str3.trim();
-        console.log(str31.trim()); //删除字符串中空格(由于此方法是创建字符串的副本，因此原字符串不会收到影响) trimLeft()/trimRight 从字符串左/右开始清除空格
+        //console.log(str31.trim()); //删除字符串中空格(由于此方法是创建字符串的副本，因此原字符串不会收到影响) trimLeft()/trimRight 从字符串左/右开始清除空格
 
         //str3.repeat()复制字符串内容x次 | str3.padStart() / str3.padEnd 从字符串开始和结束填充字符串 (x,'a') 位数,字符
 
         for(const a of "abcde"){ //使用迭代方法按序访问每个字符
-            console.log(a);
+            //console.log(a);
         }
         let msg = "abcde";
-        console.log([...msg]); //字符串可以通过这个解构操作符来解构 ...结构操作符 它可以将字符串解构为一个字符数组
+        //console.log([...msg]); //字符串可以通过这个解构操作符来解构 ...结构操作符 它可以将字符串解构为一个字符数组
 
 
         //eval接收一个参数，即一个要执行的Js字符串
         let msg2 = "hello world";
-        eval('console.log(msg2)');
+        eval('//console.log(msg2)');
 
         eval("function sayHi(){console.log('Hi!')}");
         sayHi();
@@ -52,7 +52,7 @@
         let rdmNum2 = Math.floor(Math.random() * 9 + 2) //获取2~10范围内随机整数 
         let rdmNum3 = Math.floor(Math.random() * 100 + 1)
 
-        console.log(rdmNum1,rdmNum2,rdmNum3);
+        //console.log(rdmNum1,rdmNum2,rdmNum3);
 
     </script>
 
@@ -65,7 +65,7 @@
         let person1 = new Object(); // === let person1 = {};
         person1.name = "Sam";
         person1.age = 25;
-        console.log(person1);
+        //console.log(person1);
 
         //2. (对象字面量) ✅
         let person2 = {
@@ -73,17 +73,17 @@
             "age": 22,
             
         }
-        console.log(person2);
+        //console.log(person2);
 
         //存取对象数据 两种方式
         //1. 点语法(面向对象编程的惯例) ✅
         let person3 = {
             color: "red"
         }
-        console.log(person3.color);
+        //console.log(person3.color);
 
         //2. 中括号 要在中括号内使用属性的字符串形式 可以传入一个变量 也可以接收导致语法错误或关键字的字符
-        console.log(person3["color"]);
+        //console.log(person3["color"]);
 
         //Array
         //ES中的Array与其他语言的数组有很大区别，虽然也是一组有序的数据
@@ -93,19 +93,19 @@
         //from()第一个参数是一个类数组对象，即任何可以迭代的结构。或者有一个length属性和可索引元素的结构
         //第二个为可选的映射函数参数 第三个参数用于指定映射函数中this的值
 
-        //of()将将一组参数转换为数组实例 例:console.log(Array.of(1,2,3,4) //[1,2,3,4])
+        //of()将将一组参数转换为数组实例 例://console.log(Array.of(1,2,3,4) //[1,2,3,4])
 
 
         //创建数组方式与创建对象方式类似 1.构造函数 Array() 2.数组字面量 let arr = [1,3,4];
 
         const arr1 = Array.from([1,2,3,4]); //使用ES6的Array.from()方法创建的包含3个空位的数组
         for (const val of arr1){
-            console.log(val);
-            console.log(val == undefined);
+            //console.log(val);
+            //console.log(val == undefined);
         }
 
-        console.log(Array.of(...[,,,]));
-        console.log(Array.of(...arr1)); // ...扩展运算符
+        //console.log(Array.of(...[,,,]));
+        //console.log(Array.of(...arr1)); // ...扩展运算符
 
         //数组迭代器方法 3个 keys(),values()和entries() 1返回数组索引的迭代器 2返回数组元素的迭代器 3返回索引/值的迭代器
         const arr2 = ["bar" , "lop" , " pop" , "laq"];
@@ -115,48 +115,48 @@
         const aEntries = Array.from(arr2.entries());
         //Array.from()
 
-        console.log(aKeys);
-        console.log(aValues);
-        console.log(aEntries);
+        //console.log(aKeys);
+        //console.log(aValues);
+        //console.log(aEntries);
 
         //使用ES6拆分键值对
         const arr3 = ["bar" , "lop" , " pop" , "laq"];
 
         for(const [index,ele] of arr3.entries()){
-            console.log(index);
-            console.log(ele);
+            //console.log(index);
+            //console.log(ele);
         }
 
         //数组填充fill() 第一个参数填充的字符 第二个参数开始的索引值 第三个参数结束的索引值
         const arr4 = [0,0,0,0,0];
-        console.log(arr4.fill(5));
+        //console.log(arr4.fill(5));
 
         const arr5 = [1,2,3,4,5];
-        console.log(arr5.fill(3,3));
+        //console.log(arr5.fill(3,3));
 
         const arr6 = [3,5,7,8,9];
-        console.log(arr6.fill(0,1,4)); //1之后包含1 4之前不包含4
+        //console.log(arr6.fill(0,1,4)); //1之后包含1 4之前不包含4
 
         //join()方法接收一个参数，即字符串分隔符  如果参数传入的是null、undefined或空值则默认添加逗号分割
         const colors2 = ["red","blue","pink"];
-        console.log(colors2.join());
-        console.log(colors2.toString()); //与join()方法得到的值相同
+        //console.log(colors2.join());
+        //console.log(colors2.toString()); //与join()方法得到的值相同
 
         //栈方法(后进先出 LIFO Last In First Out 最近添加的项先被删除 push()和pop())
         let colors3 = new Array();
         let count = colors3.push("red","black");
-        console.log(count);
+        //console.log(count);
 
         let item = colors3.pop();
-        console.log(item,colors3.length);
+        //console.log(item,colors3.length);
 
         //队列方法(先进先出 FIFO First In First Out) push()和shift() 从队列(数组)末尾添加数据 从队列(数组)开头获取数据
         let colors4 = new Array();
         let count2 = colors4.push("red","green");
-        console.log(count2);
+        //console.log(count2);
 
         let item2 = colors4.shift();
-        console.log(item2);
+        //console.log(item2);
 
         //ECMAScript还提供了unshift()在数组开头添加任意多个值，然后返回数组新长度 可以使用unshift()和pop()在数组开头添加数据，在数组末尾获取数据
 
@@ -174,9 +174,9 @@
         }
 
         let arr10 = [20,15,10,5,1];
-        console.log(arr10.reverse());
+        //console.log(arr10.reverse());
         arr10.sort((a,b) => a < b ? 1 : a > b ? -1 : 0);
-        console.log(arr10)
+        //console.log(arr10)
 
         //concat()在末尾添加
         //slice()创建一个从开始索引到结束索引之间的新数组 (1,3) 从1开始包含1 到3结束不包含3 如果只有一个参数则返回到数组末尾的所有元素
@@ -184,36 +184,36 @@
         //splice()方法用于在数组中插入元素
         let colors5 = ["red","green","blue"];
         let removed = colors5.splice(0,1) //删除第一项 删除
-        console.log(colors5);
-        console.log(removed);
+        //console.log(colors5);
+        //console.log(removed);
 
         removed = colors5.splice(1,0,"yellow","black"); //从1开始添加 删除0个元素 插入
-        console.log(colors5);
-        console.log(removed); //空数组
+        //console.log(colors5);
+        //console.log(removed); //空数组
 
         removed = colors5.splice(1,1,"red","pink"); //从1开始 删除1个元素 替换
-        console.log(colors5);
-        console.log(removed); //yellow
+        //console.log(colors5);
+        //console.log(removed); //yellow
 
         //indexOf() / lastIndexOf() 和 includes() | 从前往后(没找到 -1) / 从后往前(没找到 -1) / 是否包含(true,false)
         
         let arr11 = [1,2,3,4,5,4,3,2,1];
-        console.log(arr11.indexOf(4));
-        console.log(arr11.lastIndexOf(4));
-        console.log(arr11.includes(4));
+        //console.log(arr11.indexOf(4));
+        //console.log(arr11.lastIndexOf(4));
+        //console.log(arr11.includes(4));
 
-        console.log(arr11.indexOf(4,4));
-        console.log(arr11.lastIndexOf(4,4));
-        console.log(arr11.includes(4,7));
+        //console.log(arr11.indexOf(4,4));
+        //console.log(arr11.lastIndexOf(4,4));
+        //console.log(arr11.includes(4,7));
 
         let person4 = {name:'liv'};
         let people = [{name:'liz'}];
         let morePeople = [person4];
 
-        console.log(people.indexOf(person4));
-        console.log(morePeople.indexOf(person4)) //第0项元素
-        console.log(people.includes(person4));
-        console.log(morePeople.includes(person4));
+        //console.log(people.indexOf(person4));
+        //console.log(morePeople.indexOf(person4)) //第0项元素
+        //console.log(people.includes(person4));
+        //console.log(morePeople.includes(person4));
 
         //断言函数 find()和findIndex()使用了断言函数 1返回第一个匹配的元素 2返回第一个匹配元素的索引
         const people2 = [
@@ -227,51 +227,57 @@
             }
         ]
 
-        console.log(people2.find((ele,index,people2) => ele.age > 18)); //三个参数(元素,索引,数组本身)
-        console.log(people2.findIndex((ele,index,people2) => ele.age > 18));
+        //console.log(people2.find((ele,index,people2) => ele.age > 18)); //三个参数(元素,索引,数组本身)
+        //console.log(people2.findIndex((ele,index,people2) => ele.age > 18));
 
         //every()每一项都符合才会返回true some()某一项符合就会返回true
 
         //filter()基于给定函数来决定某一项是否应该包含在它返回的数组中
         let arr12 = [1,2,3,4,5,4,3,2,1];
         let filterResult = arr12.filter((item,index,arr12) => item > 2);
-        console.log(filterResult); //返回数值大于2的元素
+        //console.log(filterResult); //返回数值大于2的元素
 
         //map()方法返回的数组是对原数组的每一项同样位置运行传入函数而返回的结果
         let mapResult = arr12.map((i,index,arr12) => i * 2);
-        console.log(mapResult);
+        //console.log(mapResult);
 
         //forEach()等同于for循环遍历数组
         let arr13 = new Array();
         arr12.forEach((i , index , arr12) => {
             arr13.push(i);
         });
-        console.log(arr13);
+        //console.log(arr13);
 
         //map
         const m = new Map();
 
-        console.log(m.has("link"));
-        console.log(m.get("liz"));
-        console.log(m.size);
+        //console.log(m.has("link"));
+        //console.log(m.get("liz"));
+        //console.log(m.size);
 
         m.set("one","hinata")
         .set("two","liz");
 
-        console.log(m.delete("two"));
-        console.log(m);
-        console.log(m.size);
-        console.log(m.get("one"));
-        console.log(m.has("liz"));
+        //console.log(m.delete("two"));
+        //console.log(m);
+        //console.log(m.size);
+        //console.log(m.get("one"));
+        //console.log(m.has("liz"));
 
         //Set
         //在ES6中新增了一种集合类型 Set在很多方面像加强的Map类型一样，其中很多API和行为都是共有的
         //Set使用add()方法增加值 其余方法与Map相同
 
+        const s = new Set();
+        s.add("link");
+        s.delete("link");
+        s.add("plp");
+        // //console.log(s);
+
         let arr14 = ["pinal","pop","link"];
         
         let [p,o,d] = arr14; //数组解构
-        console.log(p,o,d);
+        //console.log(p,o,d);
 
         //reduce()用于对数组中的每个元素执行一个回调函数,并将结果累计为单个值
         //reduce()方法接受两个参数：回调函数和初始值 而回调函数中接受四个参数(累积值(上一次回调函数的返回值或初始值),当前值,当前索引和数组本身)
@@ -279,7 +285,7 @@
         let sum = arr15.reduce((a,b) => {
             return a + b;
         },0);
-        console.log(sum);
+        //console.log(sum);
 
     </script>
 
@@ -299,9 +305,9 @@
             writable :false,
             value : "hinata"
         });
-        console.log(person5.name);
+        //console.log(person5.name);
         person5.name = "pink";
-        console.log(person5.name);
+        //console.log(person5.name);
 
     </script>
 
@@ -315,8 +321,261 @@
         }
         add();
 
-        // 𝓯𝖊𝖎
+        const person6 = {
+            name:"liz",
+            age:18,
+            local:'Beijing'
+        }
 
+        const updatedPerson = {...person6 , age: 20};
+        //console.log(updatedPerson); //避免改变对象和数组
+
+        const arr16 = [1,31,324,21,19,8];
+        arr16.sort((a,b) => a < b ? -1 : a > b ? 1 : 0);
+        //console.log(arr16);
+
+        let sum2 = arr16.reduce((a,b) => {
+            return a + b;
+        },0);
+        //第二个参数为初始值 不写默认为0
+        //console.log(sum2);
+        
+        /**
+         * ES6对合并对象提供了Object.assign()方法，
+         * 这个方法接收一个目标对象和一个或多个源对象作为参数，
+         * 然后将每个源对象中可枚举和自有属性复制到目标对象
+        */
+
+        let dest , src , result;
+        /**
+         * 简单复制
+        */
+       dest = {};
+       src = { name: 'liz' };
+       op = { link: 'nol' };
+
+       result = Object.assign(dest , src , op , { sex: 'girl' , phone: 123 });
+        //第一个参数为目标对象 后面的为一个或多个源对象
+       //console.log(result);
+
+       //属性值简写
+       let name = 'Liz';
+
+        //    let person7 = {
+        //     name: name
+        //    };
+        //    //console.log(person7);
+
+        /**
+            * 可以简写为 只要使用变量名(不再写冒号)就被自动被解释为同名的属性键 如果没找到 则会抛出ReferenceError
+        * */
+        person7 = {
+            name
+        }
+        //console.log(person7);
+
+        /**
+            * 可计算属性 可以在对象字面量中完成动态属性赋值
+        */
+        const nameKey = 'name';
+        const ageKey = 'age';
+        const sexKey = 'sex';
+
+        let person8 = {};
+        person8[nameKey] = 'HINATA';
+        person8[ageKey] = 18;
+        person8[sexKey] = 'girl';
+        //console.log(person8);
+
+        /**
+         * 可计算属性 动态赋值。中括号包围的对象属性键告诉运行时
+         * 将其作为Js表达式而不是字符串来求值
+        */
+        let person9 = {
+            [nameKey]: 'COCONA',
+            [ageKey]: 22,
+            [sexKey]: 'girl'
+        };
+        //console.log(person9);
+
+        /**
+         * 简写方法名
+        */
+
+        //原始
+        let person10 = {
+            sayName: function (name) {
+                // //console.log(` Hi! My name is ${name}`)
+                return `Hi! My name is ${name}`
+            }
+        }
+        //    person10.sayName('Sam');
+        //console.log(person10.sayName('Sam'));
+
+        //简写
+        person10 = {
+            sayName(name) {
+                //console.log(`Hi! My name is ${name}`);
+            }
+        }
+        person10.sayName('Liz');
+
+
+        /**
+         * 对象解构(使用与对象匹配的结构来实现对象属性赋值)
+        */
+
+        let person11 = {
+            name: 'Lily',
+            age: 22,
+            job: {
+                title: 'pop'
+            }
+        };
+
+        let { name: personName , age: personAge , job: { title: title11 } } = person11;
+        //console.log(personName);
+        //console.log(personAge);
+        //console.log(title11);
+
+        /**
+         * 解构赋值不一定与对象的属性匹配。赋值时可以忽略某些属性。
+         * 而引用的对象属性不存在 则会赋值为undefine
+         * 可以在解构时同时地定义默认值
+         * */
+        let { name:personName2 , age: personAge2 , phone = '1390919231' , local = 'Beijing' } = person11;
+        //console.log(phone);
+        //console.log(local);
+
+        let { len } = 'asdqwezxc';
+        //console.log(len);
+
+        /**
+         * 创建对象(工厂模式)
+        */
+        const createPerson = function(name , age , job) {
+            let p = new Object();
+            p.name = name;
+            p.age = age;
+            p.job = job;
+            p.sayName = function(name){
+                //console.log(`My name is ${this.name}`) 
+                /**
+                 * 此处使用$(name)是获取不到name的
+                 * 需要传入一个name 使用this.name可以获取到name
+                */
+            };
+            return p;
+        }
+        let f_Person = createPerson('punk',18,'teacher');
+        //console.log(f_Person);
+        f_Person.sayName();
+
+        /**
+         * 构造函数模式
+         * 注:按照惯例,构造函数名称的首字母都是要大写的,非构造函数则以小写字母开头。
+        */
+        function CtrPerson(name , age , job ){ //等价于 let CtrPerson = function( name , age , job ){}
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.sayName = function(name){
+                //console.log(`My name is ${this.name}`);
+            }
+        }
+        let ctrP = new CtrPerson('Liz',18,'pop');
+        //console.log(ctrP);
+        //console.log(ctrP.constructor === CtrPerson); //ctrP中保存着CtrPerson的实例,有一个construcor属性指向CtrPerson
+
+        /**
+        * 构造函数可以是函数表达式
+        * 也可以是函数声明
+        * function Person(){}
+        * let Person = function(){}
+        */
+       function CtrA(){};
+       //console.log(typeof CtrA.prototype);
+       //console.log(CtrA.prototype);//其中有一个constructor属性
+       //console.log(CtrA.prototype.constructor);//指向构造函数
+
+        /**
+        * 在JavaScript中，每个函数都有一个特殊的属性叫做prototype。这个属性是一个对象，包含了该函数的原型方法和属性。
+        * 当我们创建一个函数时，JavaScript会自动为该函数创建一个prototype对象，并将其赋值给函数的prototype属性。
+        * 通过访问函数的prototype属性，我们可以向该函数的实例对象添加新的方法和属性。这些方法和属性会被该函数的所有实例对象所共享。
+        */
+        function CtrPerson2(){};
+
+        CtrPerson2.prototype.name = 'Niko';
+        CtrPerson2.prototype.age = 20;
+        CtrPerson2.prototype.jon = 'singer';
+        CtrPerson2.prototype.sayName = function(name){
+            return this.name;
+        }
+
+        let singer1 = new CtrPerson2();
+        let singer2 = new CtrPerson2();
+        //console.log(singer1);
+        //console.log(singer1.sayName());
+
+        /**
+         * 实例通过__proto__链接到原型对象
+         * 它实际上指向隐藏特性[[Prototype]]
+         * 
+         * 构造函数通过prototype链接到原型对象
+         * 
+         * 实例与构造函数没有直接联系,与原型对象有直接联系
+         * 
+        */
+        //console.log(singer1.__proto__ === CtrPerson2.prototype); //(实例 === 原型对象)
+        //console.log(singer1.__proto__);//原型对象
+        //console.log(singer1.__proto__.constructor);//指向构造函数
+        //console.log(singer1.__proto__.constructor === CtrPerson2);
+
+        ////console.log(singer1.prototype);//错误 实例没有prototype属性
+        //检查singer1和singer2是否有链接指向原型对象
+        //console.log(CtrPerson2.prototype.isPrototypeOf(singer1));
+        //console.log(CtrPerson2.prototype.isPrototypeOf(singer2));
+
+        /**
+         * 构造函数通过prototype属性引用其原型对象
+         * 而原型对象也有一个constructor属性,引用这个构造函数
+         * 
+         * 构造函数通过prototype引用原型对象
+         * 实例通过__proto__指向原型对象
+         * 实例再用原型对象的constructor属性指向构造函数
+         * 
+         * 同一个构造函数创建的两个对象
+         * 共享同一个原型对象
+         */
+
+        //使用getPrototypeOf()可以取得一个对象的原型 
+        //简单的验证了饭回的对象就是传入对象的原型对象
+        //console.log(Object.getPrototypeOf(singer1) == CtrPerson2.prototype);
+        //取得了原型对象上的name
+        //console.log(Object.getPrototypeOf(singer1).name);
+
+        /**
+         * 原型层级
+         * 通过对象访问属性时 -> 按照属性名称从对象中开始查找 -> 对象中没找到去原型对象中找 找到了返回属性名称对应的值
+         * 虽然可以通过实例读取原型对象上的值,但不能修改原型对象中的值,如果创建了一个与原型对象中同名的属性,则会覆盖
+         */
+        let singer3 = new CtrPerson2();
+        singer3.name = 'Sam';                //此处是在对象中创建了一个name属性 遮蔽了原型对象中的name属性
+        console.log(singer3.__proto__.name);
+        console.log(singer3.name); //来自实例
+        console.log(singer1.name); //来自原型
+        //使用hasOwnProperty()用于确定某个属性实在实例上还是在原型对象上 实例属性返回true 原型属性返回false
+        console.log(singer3.hasOwnProperty('name'));
+        console.log(singer1.hasOwnProperty('name'));
+         
+
+
+    </script>
+
+    <script>
+       /**
+        * 𝑫ȯ𝒏𝓰 𝓙𝒊𝓪𝒏𝓯𝖊𝒊
+        */
     </script>
     
 </body>
