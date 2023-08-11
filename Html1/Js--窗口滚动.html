@@ -25,6 +25,13 @@
                 top:1000px;
                 left:0;
             }
+
+        }
+
+        .test {
+            width:300px;
+            height:300px;
+            background: #bbb;
         }
 
     </style>
@@ -39,6 +46,8 @@
         <button class="testBtn--2"> Hi! </button>
 
     </div>
+
+    <button class="removeTest">删除test</button>
 
     <script>
 
@@ -78,6 +87,23 @@
             // }
 
         })
+        const div = document.querySelector('.testBlock--1');
+        const test = document.createElement('div');
+        test.classList.add('test');
+        // div.append(test); //在后
+        // div.prepend(test); //在前
+
+        div.after(test); //div(testBlock--1)之后
+        // div.before(test); //div(testBlock--1)之前
+
+        document.querySelector('.removeTest').addEventListener(
+            'click' , function() {
+                // test.remove();
+                test.parentElement.removeChild(test);
+            }
+        )
+
+        console.log(getComputedStyle(test).color);
 
     </script>
 
