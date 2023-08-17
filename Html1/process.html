@@ -40,13 +40,14 @@
             width:100%;
             background-color: #eb6101;
             margin-top:50px;
-            animation: process 10s linear;
+            animation: process 3s linear;
             transform-origin: left;
+            animation-iteration-count: infinite; /* 无限循环动画 */
         }
 
         .active {
             animation: process 10s linear;
-            animation-iteration-count: infinite; /* 无限循环动画 */
+            /* animation-iteration-count: infinite; 无限循环动画 */
         }
 
         @keyframes process {

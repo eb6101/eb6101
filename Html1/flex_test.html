@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: darkgray;
+        }
+
+        section:nth-child(1) {
+            display: flex;
+        }
+
+        h1 {
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 80px;
+            margin: 0;
+            text-align: center;
+        }
+        
+        article {
+            margin:10px;
+            padding:10px;
+            flex:1 200px;
+            background-color: aqua;
+            text-align: center;
+        }
+
+        article:nth-of-type(3) div:first-child {
+            display: flex;
+            flex: 2 200px;
+            flex-flow:row wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        button {
+            margin:10px auto;
+        }
+
+        .test {
+            width:1200px;
+            max-width: 1200px;
+            margin:0 auto;
+            background-color: aquamarine;
+            grid-gap: 3rem;
+            display: grid;
+            gap: 3rem;
+            /* grid-template-areas: "sidebar main toc"; */
+            grid-template-columns: minmax(0,1fr) minmax(0,2.5fr) minmax(0,15rem);
+            grid-auto-rows: minmax(100px,auto); /* （最小为100px ， 最大为auto 会根据内容大小自动变换 */
+            padding-left: 1rem;
+            padding-right: 1rem;
+            align-content: space-evenly;
+            justify-content: space-between;
+        }
+
+        #aside {
+            height:800px;
+            background-color: brown;
+        }
+
+        content {
+            height:800px;
+            background-color: blueviolet;
+        }
+
+        .box1 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 6;
+            background-color: darkorchid;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <section>
+
+        <aside>
+            <nav></nav>
+
+        </aside>
+
+        <article>
+
+            <h1>在这篇教程的第一部分，我们会从这开始</h1>
+
+            <span>和往常一样，你可以下载，然后在文本编辑器中打开并浏览教程的起始文件（你可以在这里查看实时的效果）。
+                你会看到一个带有容器的示例，容器中有一些子项。默认情况下，子项按照正常布局流自顶而下排布。在这篇教程的第一部分，
+                我们会从这开始，通过对这个文件做一些改变，来了解网格是如何工作的。
+            </span>
+
+        </article>
+        <article>
+
+            <h1>在这篇教程的第一部分，我们会从这开始</h1>
+
+            <span>和往常一样，你可以下载，然后在文本编辑器中打开并浏览教程的起始文件（你可以在这里查看实时的效果）。
+                你会看到一个带有容器的示例，容器中有一些子项。默认情况下，子项按照正常布局流自顶而下排布。在这篇教程的第一部分，
+                我们会从这开始，通过对这个文件做一些改变，来了解网格是如何工作的。
+            </span>
+
+        </article>
+        <article>
+
+            <div>
+
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+
+            </div>
+            <div>
+                <p>我们会从这开始，通过对这个文件做一些改变，来了解网格是如何工作的。</p>
+            </div>
+            <div>
+                <p>我们会从这开始，通过对这个文件做一些改变，来了解网格是如何工作的。</p>
+            </div>
+
+        </article>
+
+    </section>
+
+    <section>
+
+        <div class="test">
+            <div>
+                <div id="aside">
+                    <nav>123</nav>
+                </div>
+            </div>
+            <div class="content"></div>
+            <div class="box1"></div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
