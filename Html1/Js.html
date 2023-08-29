@@ -544,8 +544,8 @@
         console.log(CtrPerson2.prototype.isPrototypeOf(singer2));
 
         /**
-         * 构造函数通过prototype属性引用其原型对象
-         * 而原型对象也有一个constructor属性,引用这个构造函数
+         * 构造函数通过prototype属性引用其原型对象  --- 构造函数.prototype === 原型对象
+         * 而原型对象也有一个constructor属性,引用这个构造函数 --- 原型对象.contructor === 构造函数
          * 
          * 构造函数通过prototype引用原型对象
          * 实例通过__proto__指向原型对象
