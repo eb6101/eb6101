@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            position:relative;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 40px;
+            box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+        }
+
+        .nav-item {
+            position:relative;
+            padding: 20px;
+            margin: 0 6px;
+            text-decoration: none;
+            font-weight: 500;
+            color: #81838c;
+        }
+
+        .nav-item::before {
+            content: "";
+            position: absolute;
+            bottom: -6px;  /* 这里的-6px是为了让块有一种上升的效果 配合transition的.3s */
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #dfe2ea;
+            border-radius: 8px 8px 0 0;
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .nav-item:not(.is-active):hover::before {
+            opacity: 1;
+            bottom: 0;
+        }
+
+        .nav-item:not(.is-active):hover {  /* 未激活item选中时更改颜色 */
+            color:#333;
+        }
+
+        .nav-under {
+            position: absolute;
+            left:0;
+            bottom:0;
+            background-color: #890;
+            /* width:15px; */
+            height:5px;
+            z-index: 1;
+            border-radius: 8px 8px 0 0;
+            transition: .4s;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="nav-item is-active" active-color="orange">Home</a>
+        <a href="#" class="nav-item" active-color="green">About</a>
+        <a href="#" class="nav-item" active-color="blue">Testimonials</a>
+        <a href="#" class="nav-item" active-color="pink">Blog</a>
+        <a href="#" class="nav-item" active-color="rebeccapurple">Contact</a>
+        <span class="nav-under"></span>
+    </nav>
+
+</body>
+
+<script>
+
+    const underBar = document.querySelector('.nav-under');
+    const items = document.querySelectorAll('.nav-item');
+
+    function underHandle(el) {
+        items.forEach((item) => {
+            item.classList.remove('is-active');
+            item.removeAttribute('style'); /* 删除了内连样式 不删除样式表中的*/ 
+        })
+
+        underBar.style.width = `${el.offsetWidth}px`;
+        underBar.style.left = `${el.offsetLeft}px`;
+        underBar.style.background = el.getAttribute('active-color');
+
+        el.classList.add('is-active');
+        el.style.color = el.getAttribute('active-color');
+
+    }
+
+    items.forEach((item,index) => {
+        item.addEventListener('click' , (e) => {underHandle(e.target)});
+        item.classList.contains('is-active') && underHandle(item);
+    })
+
+</script>
+
+</html>
