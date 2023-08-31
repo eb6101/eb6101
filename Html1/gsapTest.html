@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"></script>
+    <script type="module" src="JavaScript/gsapTest_1.js"></script>
+
+    <style>
+
+        body {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            background-color: #000;
+        }
+
+        .logo {
+            width: 50%;
+            height: 50%;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        #ball_container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .ball {
+            background-color: #fff;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="demo"></div>
+    <img class="logo" src="images/Longi_Logo.jpg" />
+    <div id="ball_container">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    </div>
+    
+</body>
+</html>
