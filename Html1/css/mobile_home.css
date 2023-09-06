@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+  .content {
+    height: 80px;
+    padding: 0 30px;
+  }
+
+  .nav_bar {
+    display: none;
+  }
+
+  .hidden-nav {
+    display: inline-grid;
+  }
+
+  .sec1_title > h2 {
+    font-size: 35px;
+  }
+
+  .sec1_title > h4 {
+    font-size: 25px;
+  }
+}

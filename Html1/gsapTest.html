@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
     <script type="module" src="JavaScript/gsapTest_1.js"></script>
 
     <style>
-
         body {
-            position: relative;
             padding: 0;
             margin: 0;
             background-color: #000;
@@ -37,20 +37,54 @@
             border-radius: 50%;
         }
 
+        .screen_1 {
+            height: 100vh;
+            width:100%;
+            background-color:aqua;
+        }
+
+        .screen_2 {
+            height: 100vh;
+            width:100%;
+            background-color:cadetblue;
+        }
+
+        .screen_3 {
+            height: 100vh;
+            width:100%;
+            background-color:darkkhaki;
+        }
+
     </style>
 
 </head>
+
 <body>
 
     <div id="demo"></div>
-    <img class="logo" src="images/Longi_Logo.jpg" />
-    <div id="ball_container">
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    </div>
-    
+    <!-- <div id="ball_container">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div> -->
+    <div class="screen_1"></div>
+    <div class="screen_2"></div>
+    <div class="screen_3"></div>
+
 </body>
+
+<script>
+
+ScrollTrigger.create({
+    trigger: 'screen_2',
+    start: 'top top',
+    markers: true,
+    end: '+=1500',
+    pin:true
+})
+
+</script>
+
 </html>
