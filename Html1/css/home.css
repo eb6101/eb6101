@@ -15,7 +15,7 @@ body {
   background-color: #000;
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .fixed {
@@ -26,7 +26,6 @@ body {
 .header-hide {
   position: fixed;
   top: -80px;
-  height: 0;
 }
 
 .content {
@@ -134,7 +133,97 @@ body {
 }
 
 .sec_2 {
-  background-color: #425;
+  position:relative;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  padding: 50px 0;
+}
+
+.sec2_title {
+  position: relative;
+  text-align: center;
+  color:#000;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.sec2_title > h3 {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.sec2_title::after {
+  content: '';
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  height:2px;
+  width: 10%;
+  background-color: rgba(255, 0, 0, .7);
+  transform: translateX(-50%);
+}
+
+.sec2_box {
+  max-width: 1280px;
+  margin: 100px auto 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.icon {
+  box-sizing: border-box;
+  padding: 25px;
+}
+
+.icon:not(:last-child) {
+  margin-right: 70px;
+}
+
+.icon_1 , .icon_2 , .icon_3 , .icon_4 {
+  position: relative;
+  display: block;
+}
+
+.icon_1::after {
+  content:"专业研发团队";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  font-weight: 500;
+}
+
+.icon_2::after {
+  content:"高质量产品";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  font-weight: 500;
+}
+
+.icon_3::after {
+  content:"智能化解决方案";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  font-weight: 500;
+}
+
+.icon_4::after {
+  content:"优质售后服务";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  font-weight: 500;
 }
 
 .sec_3 {
