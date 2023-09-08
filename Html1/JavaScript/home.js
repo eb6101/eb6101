@@ -1,5 +1,30 @@
 //Home js
 
+//nav动效
+
+const under_bar = document.querySelector('.nav_under');
+const items = document.querySelectorAll('.nav_item');
+
+function handle(e) {
+    items.forEach((item) => {
+        item.classList.remove('is-active');
+        item.removeAttribute('style');
+    })
+
+    under_bar.style.width = `${e.offsetWidth}px`;
+    under_bar.style.left = `${e.offsetLeft}px`;
+    under_bar.style.backgroundColor = e.getAttribute('active-color');
+
+    e.classList.add('is-active');
+    e.style.color = e.getAttribute('active-color');
+}
+
+items.forEach((item, index) => {
+    item.addEventListener('click', (e) => { handle(e.target) });
+    item.classList.contains('is-active') && handle(item);
+})
+
+//nav隐藏显示
 var y = 0;
 
 function hideNav() {
