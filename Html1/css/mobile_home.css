@@ -3,7 +3,6 @@
     height: 80px;
     padding: 0 30px;
   }
-
   .nav_bar {
     display: none;
   }
@@ -12,11 +11,46 @@
     display: inline-grid;
   }
 
+  .sec_1 {
+    height: calc(70vh);
+  }
+
   .sec1_title > h2 {
     font-size: 35px;
   }
 
   .sec1_title > h4 {
     font-size: 25px;
+  }
+
+  .sec2_title > h3, .sec3_title > h3, .sec4_title > h3 {
+    font-size: 20px;
+  }
+
+  .sec2_box {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .sec3_box {
+    padding: 60px;
+  }
+
+  .sec3_card {
+    height:390px;
+    width: 260px;
+  }
+
+  .sec4_box {
+    padding:20px;
+  }
+
+  .sec4_case_group {
+    flex-wrap: wrap;
+    gap:20px;
+  }
+
+  .sec4_case_info , .sec4_case_img {
+    width: 100%;
   }
 }

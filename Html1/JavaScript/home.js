@@ -1,5 +1,28 @@
 //Home js
 
+// 获取 .sec3_scrolling-wrapper-flexbox 元素
+const scrollingWrapper = document.querySelector('.sec3_scrolling-wrapper-flexbox');
+
+// 获取向左滚动按钮和向右滚动按钮
+const scrollLeftButton = document.getElementById('scrollLeftButton');
+const scrollRightButton = document.getElementById('scrollRightButton');
+
+// 向左滚动按钮点击事件监听器
+scrollLeftButton.addEventListener('click', () => {
+  scrollingWrapper.scrollBy({
+    left: -270, // 向左滚动距离
+    behavior: 'smooth', // 平滑滚动
+  });
+});
+
+// 向右滚动按钮点击事件监听器
+scrollRightButton.addEventListener('click', () => {
+  scrollingWrapper.scrollBy({
+    left: 270, // 向右滚动距离
+    behavior: 'smooth', // 平滑滚动
+  });
+});
+
 //nav动效
 
 const under_bar = document.querySelector('.nav_under');

@@ -15,8 +15,8 @@ body {
 }
 
 .nav {
-  z-index: 2;
-  background-color: #000;
+  z-index: 99;
+  background-color: rgba(255,255,255,1);
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease-in-out;
@@ -42,7 +42,7 @@ body {
 }
 
 #longi_logo {
-  width: 160px;
+  width: 204px;
   line-height: 55px;
 }
 
@@ -60,7 +60,7 @@ body {
 .nav_item {
   position: relative;
   text-decoration: none;
-  color: #fff;
+  color: #000;
   font-weight: 500;
   margin: 0 10px;
   padding: 15px 10px;
@@ -99,7 +99,7 @@ body {
 .sec_1,
 /* .sec_2, */
 /* .sec_3, */
-.sec_4,
+/* .sec_4, */
 .sec_5 {
   width: 100%;
   height: calc(100vh);
@@ -109,8 +109,8 @@ body {
   box-sizing: border-box;
   height: calc(100vh);
   padding-top: 80px;
-  background-image: url("/images/earth.jpeg");
-  background-size: cover;
+  background-image: url("/images/bg.jpg");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -125,7 +125,9 @@ body {
 
 .sec1_title > h2,
 .sec1_title > h4 {
-  color: #fff;
+  color: #000;
+  -webkit-text-stroke: 2px #fff; /* 描边宽度和颜色 (WebKit 内核浏览器) */
+  text-stroke: 2px #fff; /* 描边宽度和颜色 (非-WebKit 内核浏览器) */
   font-weight: 500;
 }
 
@@ -137,20 +139,26 @@ body {
   font-size: 35px;
 }
 
-.sec_2 , .sec_3 {
+.sec_2,
+.sec_3,
+.sec_4 {
   position: relative;
   background-color: #f9f9f9;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0,0,0,.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.sec2_container , .sec3_container {
+.sec2_container,
+.sec3_container,
+.sec_4_container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 50px 0;
 }
 
-.sec2_title , .sec3_title {
+.sec2_title,
+.sec3_title,
+.sec4_title {
   position: relative;
   text-align: center;
   color: #000;
@@ -158,12 +166,16 @@ body {
   margin: 0 auto;
 }
 
-.sec2_title > h3 , .sec3_title > h3{
+.sec2_title > h3,
+.sec3_title > h3,
+.sec4_title > h3 {
   font-size: 35px;
   font-weight: 500;
 }
 
-.sec2_title::after , .sec3_title::after{
+.sec2_title::after,
+.sec3_title::after,
+.sec4_title::after {
   content: "";
   position: absolute;
   bottom: -35px;
@@ -181,7 +193,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .icon {
@@ -213,24 +225,32 @@ body {
 .icon_4 {
   position: relative;
   height: 100%;
-  transition: all .5s;
+  text-align: center;
+  transition: all 0.5s;
 }
 
-.icon_1_text , .icon_2_text , .icon_3_text , .icon_4_text{
+.icon_1_text,
+.icon_2_text,
+.icon_3_text,
+.icon_4_text {
   overflow: hidden;
   color: #000;
   font-weight: 300;
   /* text-align: center; */
   height: 0px;
   opacity: 0;
-  transition: all .5s;
+  transition: all 0.5s;
   padding: 40px 15px;
 }
 
-.icon_box_1:hover > .icon_1  , .icon_box_1:hover > .icon_1 > svg , 
-.icon_box_2:hover > .icon_2  , .icon_box_2:hover > .icon_2 > svg ,
-.icon_box_3:hover > .icon_3  , .icon_box_3:hover > .icon_3 > svg ,
-.icon_box_4:hover > .icon_4  , .icon_box_4:hover > .icon_4 > svg{
+.icon_box_1:hover > .icon_1,
+.icon_box_1:hover > .icon_1 > svg,
+.icon_box_2:hover > .icon_2,
+.icon_box_2:hover > .icon_2 > svg,
+.icon_box_3:hover > .icon_3,
+.icon_box_3:hover > .icon_3 > svg,
+.icon_box_4:hover > .icon_4,
+.icon_box_4:hover > .icon_4 > svg {
   height: 0px;
 }
 
@@ -247,6 +267,7 @@ body {
   position: absolute;
   bottom: -35px;
   left: 50%;
+  text-align: center;
   transform: translateX(-50%);
   width: 100%;
   font-weight: 500;
@@ -257,6 +278,7 @@ body {
   position: absolute;
   bottom: -35px;
   left: 50%;
+  text-align: center;
   transform: translateX(-50%);
   width: 100%;
   font-weight: 500;
@@ -267,6 +289,7 @@ body {
   position: absolute;
   bottom: -35px;
   left: 50%;
+  text-align: center;
   transform: translateX(-50%);
   width: 100%;
   font-weight: 500;
@@ -277,6 +300,7 @@ body {
   position: absolute;
   bottom: -35px;
   left: 50%;
+  text-align: center;
   transform: translateX(-50%);
   width: 100%;
   font-weight: 500;
@@ -286,7 +310,6 @@ body {
   max-width: 1280px;
   height: fit-content;
   color: #000;
-  /* background-color: #890; */
   margin: auto 0;
   padding: 20px;
   text-align: center;
@@ -294,6 +317,7 @@ body {
 
 .sec3_box {
   max-width: 1280px;
+  position: relative;
   margin: auto 0;
   padding: 80px;
 }
@@ -305,6 +329,7 @@ body {
   box-shadow: 5px 5px 15px rgba(55, 99, 170, 0.1), -5px -5px 15px #fff;
   border-radius: 4px;
   padding: 15px 25px;
+  overflow: hidden;
 }
 
 .sec3_card_content {
@@ -314,12 +339,12 @@ body {
 }
 
 .sec3_card_content::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -15px;
   right: 0;
   height: 2px;
-  width:30%;
+  width: 30%;
   background-color: red;
 }
 
@@ -328,11 +353,69 @@ body {
   height: 100%;
 }
 
+.sec3_device_info {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  height: 260px;
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.sec3_more {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgba(230, 0, 18, 1);
+}
+
+.sec3_card:hover > .sec3_device_info {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.75);
+  transform: translateY(-100%);
+}
+
+.sec3_moveButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: 0 0;
+  border: rgba(153, 153, 153, 1) solid 1px;
+  width: 50px;
+  height: 120px;
+}
+
+.sec3_svgBtn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#scrollLeftButton {
+  left: 0;
+}
+
+#scrollRightButton {
+  right: 0;
+}
+
 .sec3_scrolling-wrapper-flexbox {
+  position: relative;
   background-color: #f9f9f9;
+  z-index: 10;
   padding: 20px 0;
   display: flex;
-  /* justify-content: space-around; */
   flex-wrap: nowrap;
   overflow-x: auto;
 
@@ -346,9 +429,34 @@ body {
   }
 }
 
-.sec_4 {
-  background-color: #654;
+.sec4_box {
+  max-width: 1280px;
+  position: relative;
+  margin: auto 0;
+  padding: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  overflow: hidden;
 }
+
+.sec4_case_group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.sec4_case_info {
+  width: 50%;
+}
+
+.sec4_case_img {
+  width: 50%;
+  height: 300px;
+  background-color: #890;
+}
+
 
 .sec_5 {
   background-color: #657684;
