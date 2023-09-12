@@ -72,7 +72,7 @@ body {
   position: absolute;
   bottom: -6px;
   left: 0;
-  background-color: #dfe2ea;
+  background-color: rgba(51,51,51,.7);
   border-radius: 5px 5px 0 0;
   height: 4px;
   width: 100%;
@@ -96,21 +96,13 @@ body {
   transition: 0.4s;
 }
 
-.sec_1,
-/* .sec_2, */
-/* .sec_3, */
-/* .sec_4, */
-.sec_5 {
-  width: 100%;
-  height: calc(100vh);
-}
-
 .sec_1 {
   box-sizing: border-box;
   height: calc(100vh);
+  width: 100%;
   padding-top: 80px;
-  background-image: url("/images/bg.jpg");
-  background-size: 100% 100%;
+  background: url("/images/bg2.jpg") center center;
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -125,10 +117,12 @@ body {
 
 .sec1_title > h2,
 .sec1_title > h4 {
-  color: #000;
-  -webkit-text-stroke: 2px #fff; /* 描边宽度和颜色 (WebKit 内核浏览器) */
-  text-stroke: 2px #fff; /* 描边宽度和颜色 (非-WebKit 内核浏览器) */
-  font-weight: 500;
+  color: #e60012;
+  -webkit-text-stroke: 2px #fff;
+   /* 描边宽度和颜色 (WebKit 内核浏览器) */
+  text-stroke: 2px #fff;  
+  /* 描边宽度和颜色 (非-WebKit 内核浏览器)*/
+  font-weight: 800;
 }
 
 .sec1_title > h2 {
@@ -141,7 +135,8 @@ body {
 
 .sec_2,
 .sec_3,
-.sec_4 {
+.sec_4,
+.sec_5 {
   position: relative;
   background-color: #f9f9f9;
   box-sizing: border-box;
@@ -150,7 +145,8 @@ body {
 
 .sec2_container,
 .sec3_container,
-.sec_4_container {
+.sec_4_container,
+.sec_5_container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 50px 0;
@@ -158,7 +154,8 @@ body {
 
 .sec2_title,
 .sec3_title,
-.sec4_title {
+.sec4_title,
+.sec5_title {
   position: relative;
   text-align: center;
   color: #000;
@@ -168,14 +165,16 @@ body {
 
 .sec2_title > h3,
 .sec3_title > h3,
-.sec4_title > h3 {
+.sec4_title > h3,
+.sec5_title {
   font-size: 35px;
   font-weight: 500;
 }
 
 .sec2_title::after,
 .sec3_title::after,
-.sec4_title::after {
+.sec4_title::after,
+.sec5_title::after {
   content: "";
   position: absolute;
   bottom: -35px;
@@ -385,6 +384,7 @@ body {
 }
 
 .sec3_moveButton {
+  border-radius: 4px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -400,6 +400,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.sec3_svgBtn:hover {
+  opacity: .6;
 }
 
 #scrollLeftButton {
@@ -447,17 +452,249 @@ body {
   gap: 50px;
 }
 
+.link_title {
+  color:#000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link_title:hover {
+  color:#333;
+  text-decoration: underline;
+}
+
 .sec4_case_info {
   width: 50%;
 }
 
 .sec4_case_img {
   width: 50%;
-  height: 300px;
-  background-color: #890;
 }
 
+.link_img > img {
+  transition: all .3s;
+}
 
-.sec_5 {
-  background-color: #657684;
+.link_img:hover > img{
+  transition: all .3s;
+  transform: scale(1.08);
+}
+
+.sec4_more {
+  color: red;
+  float: right;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.sec3_more:hover  , .sec4_more:hover {
+  opacity: .7;
+}
+
+.sec5_box {
+  max-width: 1280px;
+  position: relative;
+  margin: auto 0;
+  padding: 80px 40px;
+}
+
+.sec5_news {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sec5_liveNews , .sec5_oldNews {
+  width: 49%;
+  padding: 20px;
+}
+
+.sec5_liveTitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 10px;
+}
+
+.sec5_oldNews > ul {
+  padding: 0;
+  margin: 0;
+}
+
+.newsList {
+  padding: 10px;
+  border-radius: 4px;
+  transition: all .3s;
+}
+
+.newsList:hover {
+  background-color: #e6e6e6;
+  box-shadow: 8px 8px 20px rgba(255,255,255,.1);
+  /* box-shadow: 8px 8px 20px rgba(55, 99, 170, 0.1), -8px -8px 20px #fff; */
+}
+
+.newsList::marker {
+  color: red;
+}
+
+.footer_container {
+  background-color: #333;
+  border-bottom: 2px solid rgba(255,255,255,.2);
+}
+
+.footer_main {
+  max-width: 1280px;
+  position: relative;
+  margin: 0 auto;
+  padding: 80px 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer_nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer_nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  height: 100%;
+  width: 2px;
+  background-color: rgba(230,230,230,.6);
+}
+
+.footer_group {
+  color: #fff;
+  width: 168px;
+  margin-right: 38px;
+}
+
+.footer_nav_title {
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  font: 500;
+  padding: 15px 0;
+}
+
+.footer_nav_title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 30%;
+  background-color: #e60012;
+}
+
+.footer_nav_item {
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.footer_nav_item:hover {
+  text-decoration: underline;
+}
+
+.footer_main_mobile {
+  display: none;
+  padding: 20px 24px;
+}
+
+.dropdown-toggle {
+  position: relative;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255,255,255,.2);
+}
+
+.footer_mob_title {
+  font-weight: 500;
+}
+
+.footer_mob_link_collapse {
+  /* display: none; */
+  overflow: hidden;
+  height: 0;
+  transition: all .3s ease-in-out;
+}
+
+.footer_mob_link_item {
+  color: #fff;
+  padding: 10px;
+  margin-top:5px;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.footer_aside {
+  position: relative;
+}
+
+.footer_logo {
+  margin-bottom: 40px;
+  width: 240px;
+  height: 35px;
+}
+
+.footer_qrCode {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 121px;
+  height: 121px;
+}
+
+.footer_qrCode::after {
+  content: '手机访问公众号';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer_bottom {
+  background-color:#333;
+  padding: 20px;
+}
+
+.footer_btm_container {
+  max-width: 1280px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.footer_bottom_group {
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+}
+
+.footer_beian {
+  margin-left:45px;
 }

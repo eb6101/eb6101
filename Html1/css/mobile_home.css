@@ -1,8 +1,9 @@
 @media (max-width: 768px) {
   .content {
     height: 80px;
-    padding: 0 30px;
+    padding: 0 20px;
   }
+
   .nav_bar {
     display: none;
   }
@@ -11,8 +12,13 @@
     display: inline-grid;
   }
 
+  #longi_logo {
+    width:170px;
+    height:30px;
+  }
+
   .sec_1 {
-    height: calc(70vh);
+    height: calc(80vh);
   }
 
   .sec1_title > h2 {
@@ -23,13 +29,24 @@
     font-size: 25px;
   }
 
-  .sec2_title > h3, .sec3_title > h3, .sec4_title > h3 {
-    font-size: 20px;
+  .sec2_title > h3, .sec3_title > h3, .sec4_title > h3 , .sec5_title > h3{
+    font-size: 25px;
   }
 
   .sec2_box {
     flex-wrap: wrap;
     gap: 20px;
+    padding:40px 10px 20px;
+  }
+
+  .icon_box_1, .icon_box_2, .icon_box_3, .icon_box_4 , .icon_box_5 {
+    padding: 10px 0 80px;
+    width: 185px;
+    height: 260px;
+  }
+
+  .icon_1_text , .icon_2_text , .icon_3_text , .icon_4_text > p {
+    font-size: 14px;
   }
 
   .sec3_box {
@@ -45,6 +62,14 @@
     padding:20px;
   }
 
+  .sec5_box {
+    padding: 20px;
+  }
+
+  .sec_5_container {
+    padding: 20px 0;
+  }
+
   .sec4_case_group {
     flex-wrap: wrap;
     gap:20px;
@@ -52,5 +77,31 @@
 
   .sec4_case_info , .sec4_case_img {
     width: 100%;
+  }
+
+  .sec5_liveNews , .sec5_oldNews {
+    width: 100%;
+  }
+
+  .footer_main {
+    display: none;
+  }
+
+  .footer_container {
+    border-bottom: none;
+  }
+
+  /* .footer_bottom {
+    border-top: 1px solid #fff;
+  } */
+
+  .footer_main_mobile {
+    display: block;
+  }
+
+  .footer_beian {
+    margin-left: 0;
+    display: block;
+    margin-top:15px;
   }
 }

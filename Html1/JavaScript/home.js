@@ -23,6 +23,21 @@ scrollRightButton.addEventListener('click', () => {
   });
 });
 
+//手机footerNav
+
+function toggleFooterCollapse(index) {
+  const footerElements = document.querySelectorAll('.footer_mob_link_collapse');
+  footerElements.forEach((element, i) => {
+    console.log("123")
+      // if (i === index) {
+      //     // 切换高度为0和内容高度之间的值，比如200px
+      //     element.style.height = element.style.height === '0px' ? '200px' : '0px';
+      // } else {
+      //     element.style.height = '0px'; // 其他元素高度设置为0
+      // }
+  });
+}
+
 //nav动效
 
 const under_bar = document.querySelector('.nav_under');
