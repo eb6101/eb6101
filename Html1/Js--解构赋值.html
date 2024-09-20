@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+    let map = new Map();
+
+    map.set("test1", "测试1");
+    map.set("test2", "测试2");
+    map.set("test3", "测试3");
+
+    for(let [, val] of map) {
+        console.log(val);
+    }
+
+    /* ------------------------------------- */
+
+    let a = {
+        test1: "测试1",
+        test2: "测试2",
+        test3: "测试3",
+    }
+
+    for(let b in a) {
+        console.log(a[b]) // val
+        console.log(b) // key
+    }
+
+</script>
+
+<body>
+
+</body>
+
+</html>
